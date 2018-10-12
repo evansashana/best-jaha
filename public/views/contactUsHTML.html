@@ -1,0 +1,22 @@
+<div class="container contactform" style="width:575px" xmlns="http://www.w3.org/1999/html">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            <h3 class="panel-title">Contact Form</h3>
+        </div>
+        <div class="panel-body">
+            <form name="form1" id="form1" data-ng-submit="contactUs(contacter)">
+                <fieldset>
+                    <input type="text" class="form-control" name="fullname" data-ng-model="contacter.name" placeholder="Full Name" required/>
+                    <br />
+                    <input type="text" class="form-control" name="subject" data-ng-model="contacter.email_subject" placeholder="Subject" required/>
+                    <br />
+                    <input type="email" class="form-control" name="emailid" data-ng-model="contacter.email_addr" placeholder="Email" required/>
+                    <br />
+                    <textarea rows="4" class="form-control" cols="20" name="comments" data-ng-model="contacter.email_message" placeholder="Comments" required></textarea>
+                    <br />
+                    <input type="submit" class="btn btn-success" name="submit" value="Send Message" />
+                </fieldset>
+            </form>
+        </div>
+    </div>
+</div>
