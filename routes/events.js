@@ -32,9 +32,10 @@ router.get('/:evt_id', function(req, res, next) {
 });
 
 router.post('/', function(req, res, next) {
-    var event = new Event(req.body);
-
-    event.save(function(err) {
+  console.log("WE ARE CREATING AN EVENT");
+  var event = new Event(req.body);
+  console.log(req.body);
+  event.save(function(err) {
         if (err) return next(err);
 
         res.send({"timestamp" : new Date(new Date().getTime()).toLocaleString()});

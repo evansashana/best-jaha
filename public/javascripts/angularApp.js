@@ -427,6 +427,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
         $scope.number_of_criteria = 1;
 
         $scope.addEvent = function(event) {
+            //console.log("WE ARE HERE IN THE EVENT CODE: " re)
             event.judges = [];
             event.criteria = [];
 
