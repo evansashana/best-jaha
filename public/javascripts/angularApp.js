@@ -389,7 +389,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
             }, function(res) {
                 $rootScope.stopAndReport(res.data);
             });
-        }
+        };
 
         $scope.populateForm = function() {
             console.log($rootScope.event);
@@ -466,13 +466,13 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
                               "competition, please use your current destination email as the username and create a "+
                               "password. After logging in, use the event code provided below to get to the event.\n\n" +
                               "Event Code: " + event.evt_id + "\n\nAlso, attached is a criteria page. We look forward to " +
-                              "hearing from you soon.\n\nThank you,\n\nScored! Administration";
+                              "hearing from you soon.\n\nThank you,\n\nJAHA! Administration";
                 $rootScope.sendEmail("contactus.scored@gmail.com", event.judges, "Judging!", message);
 
                 if ($rootScope.currentUserData.user.user_role.indexOf(USER_ROLES.regular) < 0)
                     $rootScope.currentUserData.user.user_role.push(USER_ROLES.regular);
 
-                UserService.updateUser($rootScope.currentUserData.user).then(function(res) {
+                UserService.UpdateUser($rootScope.currentUserData.user).then(function(res) {
                     alert('Your event was added at ' + res.data.timestamp);
                     $location.path('/home');
                 }, function(res) {
@@ -481,7 +481,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
             }, function(res){
                 $rootScope.stopAndReport(res.data);
             });
-        }
+        };
 
         function formatAMPM(date) {
             var hours = date.getHours();
@@ -507,7 +507,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
 
             var temp = $compile(el)($scope);
             angular.element(document.querySelector('#judges')).append(temp);
-        }
+        };
 
         $scope.removeJudge = function(evt, num) {
             evt.preventDefault();
@@ -517,7 +517,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
             var j = document.getElementById('judges');
             var delDiv = document.getElementById('judge-' + num);
             j.removeChild(delDiv);
-        }
+        };
 
         function failed(res) {
             $rootScope.stopAndReport(res.data);
@@ -535,7 +535,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
 
             var temp = $compile(el)($scope);
             angular.element(document.querySelector('#jcrit')).append(temp);
-        }
+        };
 
         $scope.removeCriteria = function(evt, num) {
             evt.preventDefault();
@@ -545,7 +545,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
             var j = document.getElementById('jcrit');
             var delDiv = document.getElementById('jcrit-' + num);
             j.removeChild(delDiv);
-        }
+        };
 
         $scope.checkDate = function(startDate,endDate) {
             $scope.errMessage = '';
