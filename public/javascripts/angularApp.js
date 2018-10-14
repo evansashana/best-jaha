@@ -423,10 +423,6 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
   ])
   .controller('EventCtrl', ['$scope', '$rootScope', '$compile', '$location', 'UserService', 'EventService', 'EmailService', 'USER_ROLES',
     function($scope, $rootScope, $compile, $location, UserService, EventService, EmailService, USER_ROLES) {
-<<<<<<< HEAD
-      $scope.number_of_judges = 1;
-      $scope.number_of_criteria = 1;
-=======
         $scope.number_of_judges = 1;
         $scope.number_of_criteria = 1;
 
@@ -489,8 +485,6 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
                 $rootScope.stopAndReport(res.data);
             });
         };
->>>>>>> 2f8e6804eb733194f3dffd1e4c00e2489f79e112
-
       $scope.addEvent = function(event) {
         event.judges = [];
         event.criteria = [];
