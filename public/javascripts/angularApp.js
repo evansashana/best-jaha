@@ -427,7 +427,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
         $scope.number_of_criteria = 1;
 
         $scope.addEvent = function(event) {
-            //console.log("WE ARE HERE IN THE EVENT CODE: " re)
+            console.log("here to try: ")
             event.judges = [];
             event.criteria = [];
 
@@ -472,7 +472,8 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
                 if ($rootScope.currentUserData.user.user_role.indexOf(USER_ROLES.regular) < 0)
                     $rootScope.currentUserData.user.user_role.push(USER_ROLES.regular);
 
-                UserService.UpdateUser($rootScope.currentUserData.user).then(function(res) {
+              console.log("still not broken ");
+              UserService.UpdateUser($rootScope.currentUserData.user).then(function(res) {
                     alert('Your event was added at ' + res.data.timestamp);
                     $location.path('/home');
                 }, function(res) {
