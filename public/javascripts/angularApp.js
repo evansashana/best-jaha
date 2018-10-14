@@ -460,16 +460,16 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
                               " or as an honored guest. The contest will be held at " + event.location + " on " +
                               months[event.start_date.getMonth()] + " " + event.start_date.getDate() + ", " +
                               event.start_date.getFullYear() + " starting at " + formatAMPM(event.start_date) + ". We sincerely " +
-                              "hope that you are available to attend. \n\nGo to scored.ncat.edu to register. You must be " +
-                              "connected to an NCAT network in order to use the website.\n\nWhen registering for this " +
+                              "hope that you are available to attend. \n\nGo to jahamasproject.herokuapp.com to register. You must be " +
+                              "connected to an our network in order to use the website.\n\nWhen registering for this " +
                               "competition, please use your current destination email as the username and create a "+
                               "password. After logging in, use the event code provided below to get to the event.\n\n" +
                               "Event Code: " + event.evt_id + "\n\nAlso, attached is a criteria page. We look forward to " +
                               "hearing from you soon.\n\nThank you,\n\nScored! Administration";
                 $rootScope.sendEmail("contactus.scored@gmail.com", event.judges, "Judging!", message);
 
-                if ($rootScope.currentUserData.user.user_role.indexOf(USER_ROLES.evt_admin) < 0)
-                    $rootScope.currentUserData.user.user_role.push(USER_ROLES.evt_admin);
+                if ($rootScope.currentUserData.user.user_role.indexOf(USER_ROLES.regular) < 0)
+                    $rootScope.currentUserData.user.user_role.push(USER_ROLES.regular);
 
                 UserService.updateUser($rootScope.currentUserData.user).then(function(res) {
                     alert('Your event was added at ' + res.data.timestamp);
