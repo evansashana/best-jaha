@@ -13,4 +13,5 @@ var EventSchema = new mongoose.Schema({
     scores: []
 }, { collection : 'events', versionKey : false });
 
+mongoose.set('collection', 'events');
 mongoose.model('Event', EventSchema);
