@@ -18,6 +18,9 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var events = require('./routes/events');
 
+
+mongoose.connect("mongodb://localhost:27017/Scored!");
+
 // app
 var app = express();
 // cors
@@ -65,7 +68,6 @@ var server = app.listen(process.env.PORT || 8080, function () {
 // var users = require('./routes/users');
 // var events = require('./routes/events');
 
-//mongoose.connect("mongodb://localhost:27017/Scored!");
 
 //var app = express();
 
