@@ -35,8 +35,12 @@ router.post('/', function(req, res, next) {
   var event = new Event(req.body);
 
   event.save(function(err) {
-    if (err) return next(err);
+    if (err) {
+      console.log("found an error at " + err);
+      return next(err);
+    }
 
+    console.log("NO ERROR \n");
     res.json({"timestamp" : new Date(new Date().getTime()).toLocaleString()});
   });
 });
