@@ -35,7 +35,7 @@ app.config(['$routeProvider', 'USER_ROLES',
                 templateUrl: '/views/event_page.html',
                 controller: 'EventCtrl',
                 require_login: true,
-                good_roles: [USER_ROLES.evt_admin, USER_ROLES.sys_admin],
+                good_roles: [USER_ROLES.regular, USER_ROLES.evt_admin, USER_ROLES.sys_admin],
                 css: '/stylesheets/gradient.css'
             }).
             when('/contact_us', {
@@ -56,14 +56,14 @@ app.config(['$routeProvider', 'USER_ROLES',
                 templateUrl: '/views/formPage.html',
                 controller: 'JudgeCtrl',
                 require_login: true,
-                good_roles: [USER_ROLES.judge, USER_ROLES.sys_admin],
+                good_roles: [USER_ROLES.regular, USER_ROLES.judge, USER_ROLES.sys_admin],
                 css: '/stylesheets/gradient.css'
             }).
             when('/viewEvents', {
                 templateUrl: '/views/viewEventsHTML.html',
                 controller: 'EventCtrl',
                 require_login: true,
-                good_roles: [USER_ROLES.regular, USER_ROLES.judge, USER_ROLES.evt_admin, USER_ROLES.sys_admin],
+                good_roles: [USER_ROLES.regular, USER_ROLES.regular, USER_ROLES.judge, USER_ROLES.evt_admin, USER_ROLES.sys_admin],
                 css: '/stylesheets/gradient.css'
             }).
             otherwise({
