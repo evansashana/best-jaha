@@ -20,7 +20,7 @@ var users = require('./routes/users');
 var events = require('./routes/events');
 
 var uristring =
-  process.env.MONGOLAB_URI ||
+  process.env.MONGODB_URI ||
   process.env.MONGOHQ_URL;
 
 var theport = process.env.PORT || 5000;
