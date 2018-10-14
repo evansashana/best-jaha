@@ -30,6 +30,7 @@ mongoose.connect(uristring, function (err, res) {
     console.log ('Succeeded connected to: ' + uristring);
   }
 });
+
 //mongoose.connect("mongodb://localhost:27017/Scored!");
 
 // app
