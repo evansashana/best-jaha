@@ -77,10 +77,11 @@ router.put('/:email', function(req, res, next) {
     else {
       aUser._id = user._id;
 
-      User.update({'email' : req.params.email}, aUser, {'upsert' : true}, function(err2) {
+      aUser.update({'email' : req.params.email}, aUser, {'upsert' : true}, function(err2) {
+        console.log("TRYING TO SEND A EMAIL WITH THIS USEER" + aUser);
         if (err2) return next(err2);
 
-        res.send({"timestamp" : new Date(new Date().getTime()).toUTCString()});
+        res.json({"timestamp" : new Date(new Date().getTime()).toUTCString()});
       });
     }
   });

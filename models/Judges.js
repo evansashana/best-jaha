@@ -6,4 +6,5 @@ var JudgeSchema = new mongoose.Schema({
     'events_as_judge' : []
 }, {collection : 'judges', discriminatorKey: 'kind', versionKey : false});
 
+mongoose.set('collection', 'judges');
 mongoose.model('Judge', JudgeSchema);

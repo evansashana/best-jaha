@@ -8,4 +8,5 @@ var UserSchema = new mongoose.Schema({
     last_login: Date
 }, {collection : 'users', discriminatorKey: 'kind', versionKey : false});
 
+mongoose.set('collection', 'users');
 mongoose.model('User', UserSchema);

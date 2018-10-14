@@ -467,6 +467,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
                               "password. After logging in, use the event code provided below to get to the event.\n\n" +
                               "Event Code: " + event.evt_id + "\n\nAlso, attached is a criteria page. We look forward to " +
                               "hearing from you soon.\n\nThank you,\n\nJAHA! Administration";
+
                 $rootScope.sendEmail("contactus.scored@gmail.com", event.judges, "Judging!", message);
 
                 if ($rootScope.currentUserData.user.user_role.indexOf(USER_ROLES.regular) < 0)
