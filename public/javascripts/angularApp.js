@@ -476,9 +476,11 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
                     alert('Your event was added at ' + res.data.timestamp);
                     $location.path('/home');
                 }, function(res) {
+                    console.log(res.data);
                     $rootScope.stopAndReport(res.data);
                 });
             }, function(res){
+              console.log("second one " + res.data);
                 $rootScope.stopAndReport(res.data);
             });
         };
