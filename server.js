@@ -7,6 +7,7 @@ var index = require('./routes/index');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
+var mongoose = require('mongoose');
 
 require('./models/Users');
 require('./models/Evt_Admins');
