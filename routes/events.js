@@ -34,13 +34,14 @@ router.get('/:evt_id', function(req, res, next) {
 router.post('/', function(req, res, next) {
   var event = new Event(req.body);
 
+  console.log("WE ARE CREATING" + event);
   event.save(function(err) {
     if (err) {
-      console.log("found an error at " + err);
+      console.log("error with saving event" + err);
       return next(err);
     }
 
-    console.log("NO ERROR \n");
+    console.log("NO ERROR!!");
     res.json({"timestamp" : new Date(new Date().getTime()).toLocaleString()});
   });
 });
