@@ -8,10 +8,10 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 
-// require('./models/Users');
-// require('./models/Evt_Admins');
-// require('./models/Events');
-// require('./models/Judges');
+require('./models/Users');
+require('./models/Evt_Admins');
+require('./models/Events');
+require('./models/Judges');
 
 
 var routes = require('./routes/index');
