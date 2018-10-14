@@ -19,8 +19,20 @@ var routes = require('./routes/index');
 var users = require('./routes/users');
 var events = require('./routes/events');
 
+var uristring =
+  process.env.MONGOLAB_URI ||
+  process.env.MONGOHQ_URL;
 
-mongoose.connect("mongodb://localhost:27017/Scored!");
+var theport = process.env.PORT || 5000;
+
+mongoose.connect(uristring, function (err, res) {
+  if (err) {
+    console.log ('ERROR connecting to: ' + uristring + '. ' + err);
+  } else {
+    console.log ('Succeeded connected to: ' + uristring);
+  }
+});
+//mongoose.connect("mongodb://localhost:27017/Scored!");
 
 // app
 var app = express();
