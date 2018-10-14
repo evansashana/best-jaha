@@ -1,9 +1,7 @@
-
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var cors = require('cors');
-var index = require('./routes/index');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -15,9 +13,9 @@ require('./models/Events');
 require('./models/Judges');
 
 
-var routes = require('./routes/index');
-var users = require('./routes/users');
-var events = require('./routes/events');
+var routes = require('./routes/index.js');
+var users = require('./routes/users.js');
+var events = require('./routes/events.js');
 
 var uristring =
   process.env.MONGODB_URI ||
@@ -57,8 +55,8 @@ app.use(logger('dev'));
 //app.use('/', index);
 
 app.use('/', routes);
-app.use('/users', users);
-app.use('/events', events);
+app.use('/users.js', users);
+app.use('/events.js', events);
 // port.
 var server = app.listen(process.env.PORT || 8080, function () {
   var port = server.address().port;
@@ -91,13 +89,7 @@ var server = app.listen(process.env.PORT || 8080, function () {
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(express.static(path.join(__dirname, 'public')));
-//
-// app.use('/', routes);
-// app.use('/users', users);
-// app.use('/events', events);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

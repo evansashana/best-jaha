@@ -423,8 +423,73 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
   ])
   .controller('EventCtrl', ['$scope', '$rootScope', '$compile', '$location', 'UserService', 'EventService', 'EmailService', 'USER_ROLES',
     function($scope, $rootScope, $compile, $location, UserService, EventService, EmailService, USER_ROLES) {
+<<<<<<< HEAD
       $scope.number_of_judges = 1;
       $scope.number_of_criteria = 1;
+=======
+        $scope.number_of_judges = 1;
+        $scope.number_of_criteria = 1;
+
+        $scope.addEvent = function(event) {
+            console.log("here to try: ")
+            event.judges = [];
+            event.criteria = [];
+
+            event.evt_id = Math.random().toString(36).substring(2, 9);
+            event.event_host = $rootScope.currentUserData.user.email;
+
+            var judgesHTML = $('#judges')[0].children;
+
+            for (var i = 0; i < judgesHTML.length; i++) {
+                var judge = {};
+
+                judge.name = judgesHTML[i].children.name.value;
+                judge.address = judgesHTML[i].children.email.value;
+
+                event.judges.push(judge);
+            }
+
+            var criteriaHTML = $('#jcrit')[0].children;
+
+            for (var i = 0; i < criteriaHTML.length; i++) {
+                var criterion = criteriaHTML[i].children.criterion.value;
+
+                event.criteria.push(criterion);
+            }
+
+            event.max_scale = $('input[name="tblebttn"]:checked').val();
+
+            EventService.addEvent(event).then(function(res) {
+                //var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                var message = "Hello,\n\nWe would like to invite you to join this competition, " + event.name +", as a judge" +
+                              " or as an honored guest. The contest will be held at " + event.location + " on " +
+                              "October" + " " + "19" + ", " +
+                              "2018" + " starting at " + "3:30 PM" + ". We sincerely " +
+                              "hope that you are available to attend. \n\nGo to jahamasproject.herokuapp.com to register. You must be " +
+                              "connected to an our network in order to use the website.\n\nWhen registering for this " +
+                              "competition, please use your current destination email as the username and create a "+
+                              "password. After logging in, use the event code provided below to get to the event.\n\n" +
+                              "Event Code: " + event.evt_id + "\n\nAlso, attached is a criteria page. We look forward to " +
+                              "hearing from you soon.\n\nThank you,\n\nJAHA! Administration";
+                $rootScope.sendEmail("contactus.scored@gmail.com", event.judges, "Judging!", message);
+
+                if ($rootScope.currentUserData.user.user_role.indexOf(USER_ROLES.regular) < 0)
+                    $rootScope.currentUserData.user.user_role.push(USER_ROLES.regular);
+
+              console.log("still not broken ");
+              UserService.UpdateUser($rootScope.currentUserData.user).then(function(res) {
+                    alert('Your event was added at ' + res.data.timestamp);
+                    $location.path('/home');
+                }, function(res) {
+                    console.log(res.data);
+                    $rootScope.stopAndReport(res.data);
+                });
+            }, function(res){
+              console.log("second one " + res.data);
+                $rootScope.stopAndReport(res.data);
+            });
+        };
+>>>>>>> 2f8e6804eb733194f3dffd1e4c00e2489f79e112
 
       $scope.addEvent = function(event) {
         event.judges = [];
