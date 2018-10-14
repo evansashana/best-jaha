@@ -11,6 +11,6 @@ var EventSchema = new mongoose.Schema({
     criteria: [],
     max_scale: Number,
     scores: []
-}, { collection : 'events', versionKey : false });
+}, { collection : 'events', discriminatorKey: 'kind', versionKey : false });
 
 mongoose.model('Event', EventSchema);

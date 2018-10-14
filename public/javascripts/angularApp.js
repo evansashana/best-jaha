@@ -456,11 +456,11 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
             event.max_scale = $('input[name="tblebttn"]:checked').val();
 
             EventService.addEvent(event).then(function(res) {
-                var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+                //var months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
                 var message = "Hello,\n\nWe would like to invite you to join this competition, " + event.name +", as a judge" +
                               " or as an honored guest. The contest will be held at " + event.location + " on " +
-                              months[event.start_date.getMonth()] + " " + event.start_date.getDate() + ", " +
-                              event.start_date.getFullYear() + " starting at " + formatAMPM(event.start_date) + ". We sincerely " +
+                              "October" + " " + "19" + ", " +
+                              "2018" + " starting at " + "3:30 PM" + ". We sincerely " +
                               "hope that you are available to attend. \n\nGo to jahamasproject.herokuapp.com to register. You must be " +
                               "connected to an our network in order to use the website.\n\nWhen registering for this " +
                               "competition, please use your current destination email as the username and create a "+
