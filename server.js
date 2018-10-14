@@ -13,9 +13,9 @@ require('./models/Events');
 require('./models/Judges');
 
 
-var routes = require('./routes/index.js');
-var users = require('./routes/users.js');
-var events = require('./routes/events.js');
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var events = require('./routes/events');
 
 var uristring =
   process.env.MONGODB_URI ||
@@ -55,8 +55,8 @@ app.use(logger('dev'));
 //app.use('/', index);
 
 app.use('/', routes);
-app.use('/users.js', users);
-app.use('/events.js', events);
+app.use('/users', users);
+app.use('/events', events);
 // port.
 var server = app.listen(process.env.PORT || 8080, function () {
   var port = server.address().port;
