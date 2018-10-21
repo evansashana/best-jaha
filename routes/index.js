@@ -30,8 +30,11 @@ router.post('/email', function(req, res, next) {
         };
 
         transporter.sendMail(email, function(err, info){
-            if(err) return next(err);
-
+            if(err) {
+              console.log("we have an error  " + err);
+              return next(err);
+            }
+            console.log("No eeror");
             res.json({'timestamp' : new Date(new Date().getTime())});
         });
     //});

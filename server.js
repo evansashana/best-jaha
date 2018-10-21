@@ -1,9 +1,7 @@
-
 var express = require('express');
 var path = require('path');
 var bodyParser = require('body-parser');
 var cors = require('cors');
-var index = require('./routes/index');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
@@ -32,6 +30,7 @@ mongoose.connect(uristring, function (err, res) {
     console.log ('Succeeded connected to: ' + uristring);
   }
 });
+
 //mongoose.connect("mongodb://localhost:27017/Scored!");
 
 // app
@@ -91,13 +90,7 @@ var server = app.listen(process.env.PORT || 8080, function () {
 // uncomment after placing your favicon in /public
 //app.use(favicon(path.join(__dirname, 'public', 'favicon.ico')));
 app.use(logger('dev'));
-//app.use(bodyParser.json());
-//app.use(bodyParser.urlencoded({ extended: false }));
-//app.use(express.static(path.join(__dirname, 'public')));
-//
-// app.use('/', routes);
-// app.use('/users', users);
-// app.use('/events', events);
+
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
