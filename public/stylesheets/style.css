@@ -1,6 +1,6 @@
 body {
   padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font: 34px "Lucida Grande", Helvetica, Arial, sans-serif;
 }
 
 a {
@@ -40,6 +40,13 @@ textarea {
   box-sizing: border-box;
 }
 
+input[type=radio] {
+  margin: 4px 0 0;
+  margin-top: 1px \9;
+  line-height: normal;
+  transform: scale(0.5)
+}
+
 .panel-title {
   margin-top: 0;
   margin-bottom: 0;
@@ -63,7 +70,23 @@ textarea {
   padding: 5px 10px;
   font-size: 36px;
   line-height: 1.5;
-  border-radius: 3px
+  border-radius: 3px;
+  border-width: thick;
+}
+
+button, input, select, textarea {
+  font-family: inherit;
+  font-size: 34px;
+  line-height: inherit
+}
+
+.panel-default > .panel-heading {
+  background-image: -webkit-linear-gradient(top, #f5f5f5 0, #337ab7 30%);
+  background-image: -o-linear-gradient(top, #f5f5f5 0, #337ab7 30%);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#337ab7));
+  background-image: linear-gradient(to bottom, #f5f5f5 0, #337ab7 30%);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fff5f5f5', endColorstr='#ff337ab7', GradientType=0);
+  background-repeat: repeat-x
 }
 
 .btn {
