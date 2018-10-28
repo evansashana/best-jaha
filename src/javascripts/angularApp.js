@@ -53,7 +53,7 @@ app.config(['$routeProvider', 'USER_ROLES',
                 css: '/stylesheets/aboutPageCSS.css'
             }).
             when('/judge/event_form', {
-                templateUrl: '/views/formPage.html',
+                templateUrl: '/views/TallyformPage.html',
                 controller: 'JudgeCtrl',
                 require_login: true,
                 good_roles: [USER_ROLES.judge, USER_ROLES.sys_admin],
