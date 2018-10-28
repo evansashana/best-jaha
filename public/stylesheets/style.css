@@ -19,3 +19,21 @@ textarea {
   width: 100%;
   resize: none;
 }
+
+*{
+  -webkit-box-sizing:border-box;
+  min-height:100px;
+  min-width: 500px;
+
+  -moz-box-sizing:border-box;
+  min-height:100px;
+  min-width: 500px;
+
+  box-sizing:border-box;
+  min-height:100px;
+  min-width: 500px;
+}
+:after,:before{
+  -webkit-box-sizing:border-box;
+  -moz-box-sizing:border-box;
+  box-sizing:border-box}
