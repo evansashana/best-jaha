@@ -423,11 +423,11 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
   ])
   .controller('EventCtrl', ['$scope', '$rootScope', '$compile', '$location', 'UserService', 'EventService', 'EmailService', 'USER_ROLES',
     function($scope, $rootScope, $compile, $location, UserService, EventService, EmailService, USER_ROLES) {
-        $scope.number_of_judges = 1;
+        $scope.number_of_teams = 1;
         $scope.number_of_criteria = 1;
 
         $scope.addEvent = function(event) {
-            console.log("here to try: ")
+            //console.log("here to try: ")
             event.judges = [];
             event.criteria = [];
 
@@ -616,5 +616,73 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
           alert ("Start date should not be before today.");
         }
       };
+    }
+  ])
+  .controller('EventCtrl', ['$scope', '$rootScope', '$compile', '$location', 'UserService', 'EventService', 'EmailService', 'USER_ROLES',
+    function($scope, $rootScope, $compile, $location, UserService, EventService, EmailService, USER_ROLES) {
+        $scope.number_of_teams = 1;
+        // $scope.number_of_criteria = 1;
+        //
+        // $scope.addTeamName = function(event) {
+        //     //console.log("here to try: ")
+        //
+        //   var newTeamHTML = $('#newTeams')[0].children;
+        //
+        //   for (var i = 0; i < newTeamHTML.length; i++) {
+        //     var newTeamCrit = newTeamHTML[i].children.criterion.value;
+        //
+        //     event.criteria.push(newTeamCrit);
+        //   }
+        //
+        // };
+
+
+      $scope.addNewTeam = function(evt) {
+        evt.preventDefault();
+
+        $scope.number_of_teams++;
+
+        UserService.updateUser($rootScope.currentUserData.user).then(function(res) {
+          alert('Your score has been added' + res.data.timestamp);
+          $location.path('/home');
+        }, function(res) {
+          $rootScope.stopAndReport(res.data);
+        });
+
+        var el = document.createElement('div');
+        var divIDName = 'newTeam-' + $scope.number_of_teams;
+        el.setAttribute('id', divIDName);
+        el.setAttribute('class', 'form-group');
+        el.innerHTML = '<label class="col-md-2 control-label" style="color:#FFFFFF">Team/Project Name:</label>' +
+          '<input type="text" placeholder="Team/Project Name" data-ng-model="judge_form.team">' +
+          '<div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">' +
+          '<label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>' +
+          '<input type="range" max="{{event.max_scale}}\n' +
+          '\n' +
+          '            "></div>' +
+          '<div class="form-group">' +
+          '<label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>' +
+          '<textarea rows="6" cols="50"></textarea>' +
+          '</div>' +
+          '<button data-ng-click="removeTeam(\' + $scope.number_of_teams + \');" class="btn btn-info">-</button>';
+
+        var temp = $compile(el)($scope);
+        angular.element(document.querySelector('#newTeams')).append(temp);
+      }
+
+      $scope.removeTeam = function(evt, num) {
+        evt.preventDefault();
+
+        $scope.number_of_teams--;
+
+        var j = document.getElementById('newTeams');
+        var delDiv = document.getElementById('newTeam-' + num);
+        j.removeChild(delDiv);
+      }
+
+      function failed(res) {
+        $rootScope.stopAndReport(res.data);
+      }
+
     }
   ]);
