@@ -32,7 +32,7 @@ app.config(['$routeProvider', 'USER_ROLES',
       css: '/stylesheets/gradient.css'
     }).
     when('/addEvent', {
-      templateUrl: '/views/event_page.html',
+      templateUrl: '/views/createEvent_page.html',
       controller: 'EventCtrl',
       require_login: true,
       good_roles: [USER_ROLES.regular, USER_ROLES.evt_admin, USER_ROLES.sys_admin],

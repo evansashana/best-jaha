@@ -1,5 +1,5 @@
 <div class="container" style="width:575px">
-    <div class="panel">
+    <div class="panel panel-default">
         <div class="panel-heading">
             <h3 class="panel-title">Event Details Form</h3>
         </div>
@@ -8,43 +8,43 @@
             <form role="form" data-ng-submit="addEvent(event)">
                 <div class="row">
                 <div class="form-group">
-                    <label class="control-label col-xs-4 col-sm-4 col-md-4">Event Name:</label>
-                    <input type="text" placeholder="Event name" data-ng-model="event.name" class="input" required>
+                    <label class="control-label col-xs-4 col-sm-4 col-md-4" style="color: #FFFFFF">Event Name:</label>
+                    <input type="text" placeholder="Event name" data-ng-model="event.name" class="input">
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-xs-4 col-sm-4 col-md-4">Event Location:</label>
-                    <input type="text" placeholder="Event Location" data-ng-model="event.location" class="input" required>
+                    <label class="control-label col-xs-4 col-sm-4 col-md-4" style="color: #FFFFFF">Event Location:</label>
+                    <input type="text" placeholder="Event Location" data-ng-model="event.location" class="input">
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-xs-4 col-sm-4 col-md-4">Start Date:</label>
+                    <label class="control-label col-xs-4 col-sm-4 col-md-4" style="color: #FFFFFF">Start Date:</label>
                     <input type="datetime-local" data-ng-model="event.start_date" class="input" data-ng-change='checkDate(event.start_date,event.end_date)' required>
                 </div>
                 <div class="form-group">
-                    <label class="control-label col-xs-4 col-sm-4 col-md-4">End Date:</label>
+                    <label class="control-label col-xs-4 col-sm-4 col-md-4"style="color: #FFFFFF">End Date:</label>
                     <input type="datetime-local" data-ng-model="event.end_date" class="input" data-ng-change='checkDate(event.start_date,event.end_date)' required>
                 </div>
                 </div>
-                <h2 class="form-group" style="font-size:34px"> <strong>Enter Full Name and <br> Email of Judges</strong> </h2><br>
+                <h2 class="form-group" style="font-size:34px; color: #FFFFFF"> <strong>Enter Full Name and <br> Email of Judges</strong> </h2><br>
                 <div id="judges">
                     <div id="judge-1" class="form-group">
                         <input type="text" placeholder="full name" name="name" class="input">
-                        <input type="email" placeholder="youremail@email.com" name="email" class="input" required>
+                        <input type="email" placeholder="youremail@email.com" name="email" class="input">
                         <button data-ng-click="addJudge($event);" class="btn btn-primary">+</button>
                     </div>
                 </div>
 
-                <h2 class="form-group" style="font-size:34px" ><strong>List Performances That Can Be Assessed </strong></h2><br>
+                <h2 class="form-group" style="font-size:34px;color: #FFFFFF" ><strong>List Performances That Can Be Assessed </strong></h2><br>
                 <div id="jcrit">
                     <div id="jcrit-1" class="form-group">
-                        <input type="text" placeholder="Technical Difficulty" name="criterion" class="input" required>
+                        <input type="text" placeholder="Technical Difficulty" name="criterion" class="input">
                       <button data-ng-click="addCriteria($event);" class="btn btn-primary">+</button>
                     </div>
                 </div>
 
-                <h2 class="form-group" style="font-size:34px"> <strong>Choose a Scale for Performance</strong></h2>
+                <h2 class="form-group" style="font-size:34px; color: #FFFFFF"> <strong>Choose a Scale for Performance</strong></h2>
                 <br>
                 <div align="left">
-                    <label><input type="radio" style="vertical-align: middle; margin: 0px" name="tblebttn" value="5" required>
+                    <label><input type="radio" style="vertical-align: middle; margin: 0px" name="tblebttn" value="5">
                         0-5 (5 being highest)</label>
                     <label><input type="radio" style="vertical-align: middle; margin: 0px" name="tblebttn" value="10">
                         0-10 (10 being highest)</label>
