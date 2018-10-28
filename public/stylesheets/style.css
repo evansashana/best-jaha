@@ -47,6 +47,17 @@ textarea {
   color: white
 }
 
+.glyphicon {
+  position: relative;
+  top: 1px;
+  font-family: 'Glyphicons Halflings';
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
