@@ -58,6 +58,14 @@ textarea {
   -moz-osx-font-smoothing: grayscale
 }
 
+.input-sm {
+  height: 30px;
+  padding: 5px 10px;
+  font-size: 36px;
+  line-height: 1.5;
+  border-radius: 3px
+}
+
 .btn {
   display: inline-block;
   padding: 6px 12px;
