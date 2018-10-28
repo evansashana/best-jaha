@@ -1,6 +1,7 @@
 body {
   padding: 50px;
   font: 34px "Lucida Grande", Helvetica, Arial, sans-serif;
+  color: #333;
 }
 
 a {
@@ -48,7 +49,7 @@ input[type=radio] {
 }
 
 .btn-danger {
-  color: #A40000;
+  color: #FFFFFF;
   background-color: #d9534f;
   border-color: #d43f3a
 }
@@ -96,13 +97,13 @@ input[type=radio] {
   font-size: 36px;
   line-height: 1.5;
   border-radius: 3px;
-  border-width: thick;
 }
 
 button, input, select, textarea {
   font-family: inherit;
   font-size: 34px;
-  line-height: inherit
+  line-height: inherit;
+  border-width: thick;
 }
 
 .panel-default > .panel-heading {

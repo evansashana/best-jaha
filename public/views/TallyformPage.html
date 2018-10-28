@@ -1,16 +1,16 @@
 <div class="panel-body">
     <form class="form">
         <div class="form-group">
-            <label class="col-md-2 control-label">Event Name:</label>
+            <label class="col-md-2 control-label" style="color:#FFFFFF">Event Name:</label>
             <input type="text" data-ng-model="event.name" readonly>
         </div>
         <div class="form-group">
-            <label class="col-md-2 control-label">Event Location:</label>
+            <label class="col-md-2 control-label" style="color:#FFFFFF">Event Location:</label>
             <input type="text" data-ng-model="event.location" readonly>
         </div>
         <div class="form-group">
-            <label class="col-md-2 control-label">Team/Project Name:</label>
-            <input type="text" placeholder="Team/Project Name" data-ng-model="judge_form.team" required>
+            <label class="col-md-2 control-label" style="color:#FFFFFF">Team/Project Name:</label>
+            <input type="text" placeholder="Team/Project Name" data-ng-model="judge_form.team">
         </div>
         <div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">
             <label class="col-md-2 control-label">{{criterion}}</label>
@@ -19,7 +19,7 @@
             ">
         </div>
         <div class="form-group">
-            <label class="col-md-2 control-label">Additional Comments:</label>
+            <label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>
             <textarea rows="6" cols="50"></textarea>
         </div>
       <div class="line">
