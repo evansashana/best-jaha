@@ -11,6 +11,7 @@ require('./models/Users');
 require('./models/Evt_Admins');
 require('./models/Events');
 require('./models/Judges');
+require('./models/Teams');
 
 
 var routes = require('./routes/index');
