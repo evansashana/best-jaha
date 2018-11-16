@@ -2,11 +2,13 @@
     <form class="form">
         <div class="form-group">
             <label class="col-md-2 control-label" style="color:#FFFFFF">Event Name:</label>
-            <input type="text" data-ng-model="event.name" readonly>
+          <label class="col-md-2 control-label" data-ng-bind="event.name" style="color:#FFFFFF">{{event.name}}</label>
+            <!--<input type="text" data-ng-model="event.name" readonly>-->
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" style="color:#FFFFFF">Event Location:</label>
-            <input type="text" data-ng-model="event.location" readonly>
+          <label class="col-md-2 control-label" data-ng-bind="event.location" style="color:#FFFFFF">{{event.location}}</label>
+            <!--<input type="text" data-ng-model="event.location" readonly>-->
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" style="color:#FFFFFF">Team/Project Name:</label>
@@ -14,10 +16,9 @@
         </div>
         <div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">
             <label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>
-            <input type="range" max="{{event.max_scale}}
-
-            ">
-        </div>
+          <output style="color: #FFFFFF; font-size: 34px" id="range_weight_disp"></output>
+          <input id="range_weight" type="range" max="{{event.max_scale}}"
+                   oninput="range_weight_disp.value = range_weight.value"></div>
         <div class="form-group">
             <label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>
             <textarea rows="6" cols="50"></textarea>
