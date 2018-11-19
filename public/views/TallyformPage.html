@@ -16,13 +16,9 @@
         </div>
         <div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">
             <label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>
-          <input type="range" id="range_weight" min="0" max="{{event.max_scale}}"
-                   oninput="myFunction()">
-          <script>
-            function myFunction() {
-              alert("The value of the input field was changed.");
-            }
-          </script>
+          <output style="color: #FFFFFF; font-size: 134px" id="range_weight_disp" value= "5">  </output>
+          <input type="range" id="range_weight" value = "5" min="0" max="{{event.max_scale}}"
+                   oninput="range_weight_disp.value = range_weight.value">
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>
