@@ -16,9 +16,9 @@
         </div>
         <div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">
             <label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>
-          <output style="color: #FFFFFF; font-size: 134px" id="range_weight_disp" value= "5">  </output>
-          <input type="range" id="range_weight" value = "5" min="0" max="{{event.max_scale}}"
-                   oninput="range_weight_disp.value = range_weight.value">
+          <output style="font-size: 34px; color: #FFFFFF" id="text1" type="text"></output>
+          <input id="ex1" type="range" min="0" max="{{event.max_scale}}" step="1"
+                   onchange="text1.value = ex1.value">
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>
