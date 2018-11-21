@@ -17,8 +17,8 @@
         <div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">
             <label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>
           <output style="font-size: 34px; color: #FFFFFF" id="text1" type="text"></output>
-          1<input id="ex1" type="range" min="0" max="{{event.max_scale}}" step="1"
-                   onchange="text1.value = ex1.value">10
+          <input id="ex1" type="range" min="0" max="{{event.max_scale}}" step="1"
+                   onchange="text1.value = ex1.value" list = "ticks">
           <datalist id="ticks">
             <option value="1" label="1"></option>
             <option value="2"></option>
@@ -31,7 +31,6 @@
             <option value="9"></option>
             <option value="10" label="10"></option>
           </datalist>
-        </div>
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>
