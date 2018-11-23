@@ -237,7 +237,6 @@ input[type='range']:focus {
 .range_stuff:after {
   position: absolute;
   color: #777;
-  content: '2 4 6 8';
   padding: 40px;
   word-spacing: 20px;
   left: 0px;

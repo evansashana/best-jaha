@@ -16,12 +16,13 @@
         </div>
         <div class="form-group range_stuff" id="criteria" data-ng-repeat="criterion in event.criteria">
             <label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>
-          <output style="font-size: 34px; color: #FFFFFF;" for=rangeInput id="output" type="text">5</output>
+          <output style="font-size: 34px; color: #FFFFFF;" for=rangeInput id="output"></output>
           <input id="rangeInput" type="range" min="0" max="10" step="1" value="5"
-                 oninput="output.value = rangeInput.value" list="ticks">
+                 oninput="outputUpdate(value)" list="ticks">
           <script>
             function outputUpdate(num) {
               document.querySelector('#output').value = num;
+              alert("it should work")
             }
           </script>
           <datalist id="ticks">
