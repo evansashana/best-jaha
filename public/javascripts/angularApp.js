@@ -396,7 +396,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
       }
 
       $scope.slider = {
-        value: $rootScope.event.max_scale
+        value: 10
       };
 
 
