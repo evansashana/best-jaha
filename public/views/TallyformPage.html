@@ -14,23 +14,23 @@
             <label class="col-md-2 control-label" style="color:#FFFFFF">Team/Project Name:</label>
             <input type="text" placeholder="Team/Project Name" data-ng-model="judge_form.team">
         </div>
-        <div class="form-group range_stuff" id="criteria" data-ng-repeat="criterion in event.criteria">
+        <div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">
             <label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>
           <output style="font-size: 34px; color: #FFFFFF;" for=value id="output"></output>
-          <input id="value" type="range" min="0" max="10" step="1" value="5"
-                 oninput="outputUpdate(value)" list="ticks">
-          <script>
+          <script text="text/javascript">
             function outputUpdate(num) {
               document.getElementById('output').value = num;
+              window.outputUpdate  = outputUpdate;
             }
           </script>
-          <!--<rzslider rz-slider-model="slider.value"></rzslider>-->
-          <datalist id="ticks">
+          <input id="value" type="range" min="0" max="10" step="1" value="5"
+                 onclick="outputUpdate(value);" list="ticks">
+          <datalist id="ticks" style="color: #FFFFFF">
             <option value="1" label="1"> </option>
             <option value="2"></option>
             <option value="3"></option>
             <option value="4"></option>
-            <option value="0 to 5">0</option>
+            <option value="5" label="5"></option>
             <option value="6"></option>
             <option value="7"></option>
             <option value="8"></option>
