@@ -399,6 +399,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
         value: $rootScope.event.max_scale
       };
 
+
       /*$scope.populateForm = function() {
           /*var el = document.createElement('div');
           el.setAttribute('data-ng-model', "event.name");
