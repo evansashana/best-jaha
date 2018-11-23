@@ -234,17 +234,17 @@ input[type='range']:focus {
   top: 0px;
 }*/
 
-.container:after {
+.range_stuff:after {
   position: absolute;
   color: #777;
-  content: '20 40 60 80';
+  content: '2 4 6 8';
   padding: 40px;
   word-spacing: 20px;
   left: 0px;
   top: 0px;
   z-index: -1;
 }
-.container {
+.range_stuff {
   padding: 0px;
   position: relative;
 }
