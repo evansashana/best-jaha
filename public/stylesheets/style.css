@@ -254,7 +254,7 @@ output{
   color: #FFF;
 }
 output:before{
-  content:"";
+  content:"Value: ";
   font-weight: bold;
 }
 body {
