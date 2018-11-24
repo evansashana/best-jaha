@@ -43,8 +43,41 @@
             <textarea rows="6" cols="50"></textarea>
         </div>
       <div id="newTeams">
+        <script type="text/javascript">
+          function addRow () {
+            document.querySelector('#content').insertAdjacentHTML(
+              'afterbegin',
+              '<div class="form-group">' +
+              '<label class="col-md-2 control-label" style="color:#FFFFFF">Team/Project Name:</label>' +
+              '<input type="text" placeholder="Team/Project Name" data-ng-model="judge_form.team">' +
+              '</div>' +
+              '<div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">' +
+              '<label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>' +
+            '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="value"></output>'+
+            '<input id="val" type="range" min="0" max="10" step="1" value="5" onclick="window.this.output.value = window.this.val.value">'+
+              '</div>'+
+              '<div class="form-group">'+
+              '<label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>'+
+            '<textarea rows="6" cols="50"></textarea>'+
+              '<input type="button" value="-" onclick="removeRow(this)">' +
+              '</div>'
+
+          )
+          }
+          window.addRow = addRow;
+
+          function removeRow (input) {
+            input.parentElement.remove()
+          }
+        </script>
         <div id="newTeam-1" class="form-group">
-          <button data-ng-click="addNewTeam(event);" class="btn btn-primary"> Add a Team</button>
+          <input class="btn btn-primary" type="button" value="Add Team" onclick="addRow();">
+          <!--<button data-ng-click="addNewTeam(event);" class="btn btn-primary"> Add a Team</button>-->
+          <div id="content" class="form-group">
+          </div>
+        <!--<div id="newTeam-1" class="form-group">-->
+          <!--<input class="btn btn-primary" type="button" value="Add Team" onclick="addRow();">-->
+          <!--<button onclick="addRow();" class="btn btn-primary"> Add a Team</button>-->
         </div>
       </div>
       <div class="line">
