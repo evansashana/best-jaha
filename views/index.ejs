@@ -10,6 +10,27 @@
         <script src="/javascripts/angularApp.js"></script>
         <script src="/javascripts/bootstrap.min.js"></script>
         <script src="/javascripts/angular-css.min.js"></script>
+        <script text="text/javascript">
+                    function outputUpdate(num) {
+                      document.querySelector('#output').value = num;
+                      window.outputUpdate  = outputUpdate;
+                    }
+         </script>
+         <script>
+          function addRow () {
+            document.querySelector('#content').insertAdjacentHTML(
+              'afterbegin',
+              `<div class="row">
+                <input type="text" name="name" value="" />
+                <input type="button" value="-" onclick="removeRow(this)">
+              </div>`
+            )
+          }
+
+          function removeRow (input) {
+            input.parentNode.remove()
+          }
+          </script>
 
         <!-- Bootstrap core CSS -->
         <link href="/stylesheets/bootstrap.min.css" rel="stylesheet">
