@@ -141,5 +141,5 @@ myapp.directive('ngConfirmClick', [
       }
     };
   }]);
-
+module.exports = myapp;
 module.exports = app;
