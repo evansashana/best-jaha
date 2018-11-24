@@ -398,20 +398,20 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
       }
 
 
-      $scope.directive('ngConfirmClick', [
-        function(){
-          return {
-            link: function (scope, element, attr) {
-              var msg = attr.ngConfirmClick || "Are you sure?";
-              var clickAction = attr.confirmedClick;
-              element.bind('click',function (event) {
-                if ( window.confirm(msg) ) {
-                  scope.$eval(clickAction)
-                }
-              });
-            }
-          };
-        }]);
+      // $scope.directive('ngConfirmClick', [
+      //   function(){
+      //     return {
+      //       link: function (scope, element, attr) {
+      //         var msg = attr.ngConfirmClick || "Are you sure?";
+      //         var clickAction = attr.confirmedClick;
+      //         element.bind('click',function (event) {
+      //           if ( window.confirm(msg) ) {
+      //             scope.$eval(clickAction)
+      //           }
+      //         });
+      //       }
+      //     };
+      //   }]);
 
         $scope.sendEmail = function () {
           var message = "Hello,\n\nHere are the results of " + event.name +" held at " + event.location + " on " +

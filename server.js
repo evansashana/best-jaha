@@ -124,4 +124,22 @@ app.use(function(err, req, res, next) {
   });
 });
 
+
+var myapp = angular.module('myapp',[]);
+
+myapp.directive('ngConfirmClick', [
+  function(){
+    return {
+      link: function (scope, element, attr) {
+        var msg = attr.ngConfirmClick || "Are you sure?";
+        var clickAction = attr.confirmedClick;
+        element.bind('click',function (event) {
+          if ( window.confirm(msg) ) {
+            scope.$eval(clickAction)
+          }
+        });
+      }
+    };
+  }]);
+
 module.exports = app;
