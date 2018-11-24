@@ -16,7 +16,7 @@
         </div>
         <div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">
           <label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>
-          <output style="font-size: 34px; color: #FFFFFF;" for=value id="output"></output>
+          <!--<output style="font-size: 34px; color: #FFFFFF;" for=value id="output"></output>-->
           <script text="text/javascript">
             function outputUpdate(num) {
               document.querySelector('#output').value = num;
@@ -25,18 +25,6 @@
           </script>
           <input id="value" type="range" min="0" max="{{event.max_scale}}" step="1" value="5"
                  oninput="outputUpdate(value);">
-          <!--<datalist id="ticks" style="color: #FFFFFF">-->
-            <!--<option value="1" label="1"> </option>-->
-            <!--<option value="2"></option>-->
-            <!--<option value="3"></option>-->
-            <!--<option value="4"></option>-->
-            <!--<option value="5" label="5"></option>-->
-            <!--<option value="6"></option>-->
-            <!--<option value="7"></option>-->
-            <!--<option value="8"></option>-->
-            <!--<option value="9"></option>-->
-            <!--<option value="10"></option>-->
-          <!--</datalist>-->
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>
@@ -53,12 +41,12 @@
               '</div>' +
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Difficulty</label>' +
-            '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="value1"></output>'+
+            // '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="val1"></output>'+
             '<input id="val1" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(val1)">'+
               '</div>'+
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Presentation</label>' +
-              '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="value2"></output>'+
+              // '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="val2"></output>'+
               '<input id="val2" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(val2)">'+
               '</div>'+
               '<div class="form-group">'+
