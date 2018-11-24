@@ -13,7 +13,7 @@
         <script text="text/javascript">
                     function outputUpdate(num) {
                       document.querySelector('#output').value = num;
-                      <!--window.outputUpdate  = outputUpdate;-->
+                      window.outputUpdate  = outputUpdate;
                     }
          </script>
         <script type="text/javascript">
@@ -24,10 +24,15 @@
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Team/Project Name:</label>' +
               '<input type="text" placeholder="Team/Project Name" data-ng-model="judge_form.team">' +
               '</div>' +
-              '<div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">' +
-              '<label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>' +
-            '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="value"></output>'+
-            '<input id="val" type="range" min="0" max="10" step="1" value="5" onclick="window.this.output.value = window.this.val.value">'+
+              '<div class="form-group" id="criteria">' +
+              '<label class="col-md-2 control-label" style="color:#FFFFFF">Difficulty</label>' +
+            '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="value1"></output>'+
+            '<input id="val1" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(val1)">'+
+              '</div>'+
+              '<div class="form-group" id="criteria">' +
+              '<label class="col-md-2 control-label" style="color:#FFFFFF">Presentation</label>' +
+              '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="value2"></output>'+
+              '<input id="val2" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(val2)">'+
               '</div>'+
               '<div class="form-group">'+
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>'+
@@ -40,7 +45,11 @@
           window.addRow = addRow;
 
           function removeRow (input) {
-            input.parentElement.remove()
+              input.parentElement.remove()
+
+            // //var j = document.getElementById('newTeams-1');
+            // var delDiv = document.getElementById('content');
+            //  delDiv.getParent().remove();
           }
         </script>
 

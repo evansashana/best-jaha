@@ -16,7 +16,7 @@
         </div>
         <div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">
           <label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>
-          <output style="font-size: 34px; color: #FFFFFF;" for=value id="output">5</output>
+          <output style="font-size: 34px; color: #FFFFFF;" for=value id="output"></output>
           <script text="text/javascript">
             function outputUpdate(num) {
               document.querySelector('#output').value = num;
@@ -103,25 +103,7 @@
         </div>
       </div>
       <div class="line">
-        <!--<script>-->
-          <!--function sendEmail() {-->
-            <!--var message = "Hello,\nHere are the results of " + event.name +" held at " + event.location + " on " +-->
-              <!--"November" + " " + "26" + ", " +-->
-              <!--"2018" + " starting at " + "4:30 PM" + "\n\nTeam Scores: \n\n Fun-Recyclist: " +-->
-              <!--"Difficulty: 7 Presentation: 8 Additional Notes: Great Concept\n\n" +-->
-              <!--"Fairy-Whales: Difficulty: 4 Presentation: 6  Additional Notes: Only two members showed up" +-->
-              <!--"\n\n Watchable: Difficulty: 8 Presentation: 10 " +-->
-              <!--"\n\n NaN: Difficulty: 8 Presentation: 6 "+-->
-              <!--"\n\n 1st Place: Watahable"+ "\n\n 2nd Place: NaN" + "\n\n 3rd Place: Fun-Recyclist"+-->
-              <!--"\n\n Thanks for using our App JAHA! Administration";-->
-
-            <!--var link = 'mailto:evans.ashana.3b@gmail.com?subject=Results from '-->
-              <!--+"contactus.scored@gmail.com"-->
-              <!--+'&body='+ message;-->
-            <!--window.location.href = link;-->
-          <!--}-->
-        <!--</script>-->
-        <a href="#/home" class="btn btn-success" type="submit" value="Submit" data-ng-submit="sendEmail();">Submit </a>
+        <a href="#/home" class="btn btn-success" type="submit" value="Submit" data-ng-click="sendEmail();">Submit </a>
         <div class="form-group">
           <a href="#/home" class="btn btn-danger btn-md" role="button">Cancel</a>
         </div>
