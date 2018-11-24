@@ -52,9 +52,14 @@
               '<input type="text" placeholder="Team/Project Name" data-ng-model="judge_form.team">' +
               '</div>' +
               '<div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">' +
-              '<label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>' +
+              '<label class="col-md-2 control-label" style="color:#FFFFFF">Difficulty</label>' +
             '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="value"></output>'+
-            '<input id="val" type="range" min="0" max="10" step="1" value="5" onclick="window.this.output.value = window.this.val.value">'+
+            '<input id="val" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(value)">'+
+              '</div>'+
+              '<div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">' +
+              '<label class="col-md-2 control-label" style="color:#FFFFFF">Presentation</label>' +
+              '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="value"></output>'+
+              '<input id="val" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(value)">'+
               '</div>'+
               '<div class="form-group">'+
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>'+
@@ -66,22 +71,57 @@
           }
           window.addRow = addRow;
 
+          // function Init(){
+          //   //We are getting all anyClass elements
+          //   var tL = document.querySelectorAll('.form-group');
+          //
+          //   //We assign the remove event for all of them and instead of the string id we pass the element itself (=this)
+          //   for(var i=0, j=tL.length; i<j; i++)
+          //     tL[i].onclick = function(){
+          //       removeRow(this)
+          //     }
+          //     window.Init = Init;
+          // }
+
           function removeRow (input) {
-            input.parentElement.remove()
+              input.parentElement.remove()
+
+            // //var j = document.getElementById('newTeams-1');
+            // var delDiv = document.getElementById('content');
+            //  delDiv.getParent().remove();
           }
         </script>
         <div id="newTeam-1" class="form-group">
-          <input class="btn btn-primary" type="button" value="Add Team" onclick="addRow();">
+            <input class="btn btn-primary" type="button" value="Add Team" onclick="addRow();">
+
           <!--<button data-ng-click="addNewTeam(event);" class="btn btn-primary"> Add a Team</button>-->
-          <div id="content" class="form-group">
-          </div>
+        <div id="content" class="form-group">
+        </div>
         <!--<div id="newTeam-1" class="form-group">-->
           <!--<input class="btn btn-primary" type="button" value="Add Team" onclick="addRow();">-->
           <!--<button onclick="addRow();" class="btn btn-primary"> Add a Team</button>-->
         </div>
       </div>
       <div class="line">
-        <a href="#/home" class="btn btn-success" type="submit" value="Submit">Submit </a>
+        <!--<script>-->
+          <!--function sendEmail() {-->
+            <!--var message = "Hello,\nHere are the results of " + event.name +" held at " + event.location + " on " +-->
+              <!--"November" + " " + "26" + ", " +-->
+              <!--"2018" + " starting at " + "4:30 PM" + "\n\nTeam Scores: \n\n Fun-Recyclist: " +-->
+              <!--"Difficulty: 7 Presentation: 8 Additional Notes: Great Concept\n\n" +-->
+              <!--"Fairy-Whales: Difficulty: 4 Presentation: 6  Additional Notes: Only two members showed up" +-->
+              <!--"\n\n Watchable: Difficulty: 8 Presentation: 10 " +-->
+              <!--"\n\n NaN: Difficulty: 8 Presentation: 6 "+-->
+              <!--"\n\n 1st Place: Watahable"+ "\n\n 2nd Place: NaN" + "\n\n 3rd Place: Fun-Recyclist"+-->
+              <!--"\n\n Thanks for using our App JAHA! Administration";-->
+
+            <!--var link = 'mailto:evans.ashana.3b@gmail.com?subject=Results from '-->
+              <!--+"contactus.scored@gmail.com"-->
+              <!--+'&body='+ message;-->
+            <!--window.location.href = link;-->
+          <!--}-->
+        <!--</script>-->
+        <a href="#/home" class="btn btn-success" type="submit" value="Submit" data-ng-click="sendEmail();">Submit </a>
         <div class="form-group">
           <a href="#/home" class="btn btn-danger btn-md" role="button">Cancel</a>
         </div>
