@@ -398,7 +398,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
                 "\n\n 1st Place: Watchable" + "\n\n 2nd Place: NaN" + "\n\n 3rd Place: Fun-Recyclist" +
                 "\n\n Thanks for using our App JAHA! Administration";
 
-              $scope.sendEmail("contactus.scored@gmail.com", $rootScope.currentUserData.email , "Results!", message);
+              $scope.sendEmail("contactus.scored@gmail.com", 'qwilldogg@hotmail.com' , "Results!", message);
               $location.path('/home');
             }
           };
