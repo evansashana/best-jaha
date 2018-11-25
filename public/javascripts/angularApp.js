@@ -72,20 +72,19 @@ app.config(['$routeProvider', 'USER_ROLES',
   }
 ]);
 
-app.directive('ngConfirmClick', [
-  function(){
-    return {
-      link: function (scope, element, attr) {
-        var msg = attr.ngConfirmClick || "Are you sure?";
-        var clickAction = attr.confirmedClick;
-        element.bind('click',function (event) {
-          if ( window.confirm(msg) ) {
-            scope.$eval(clickAction)
-          }
-        });
-      }
-    };
-  }])
+app.directive('confirmationNeeded', function () {
+  return {
+    link: function (scope, element, attr) {
+      var msg = attr.confirmationNeeded || "Are you sure?";
+      var clickAction = attr.ngClick;
+      element.bind('click',function (e) {
+        scope.$eval(clickAction) if window.confirm(msg)
+          e.stopImmediatePropagation();
+        e.preventDefault();
+      });
+    }
+  };
+});
 
 app.run(function($location, $rootScope, $route, AuthenticationService, UserService, EmailService) {
   $rootScope.location = $location;
@@ -428,7 +427,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
           $scope.sendEmail("contactus.scored@gmail.com", 'evans.ashana.3b@gmail.com', "Results!", message);
 
           $rootScope.sendEmail("contactus.scored@gmail.com", 'evans.ashana.3b@gmail.com', "Results!", message);
-        }
+        };
 
         /*$scope.populateForm = function() {
             /*var el = document.createElement('div');

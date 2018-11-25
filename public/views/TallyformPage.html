@@ -16,7 +16,7 @@
         </div>
         <div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">
           <label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>
-          <!--<output style="font-size: 34px; color: #FFFFFF;" for=value id="output"></output>-->
+          <output style="font-size: 34px; color: #FFFFFF;" for=value id="output"></output>
           <script text="text/javascript">
             function outputUpdate(num) {
               document.querySelector('#output').value = num;
@@ -41,12 +41,12 @@
               '</div>' +
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Difficulty</label>' +
-            // '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="val1"></output>'+
+            '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="val1"></output>'+
             '<input id="val1" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(val1)">'+
               '</div>'+
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Presentation</label>' +
-              // '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="val2"></output>'+
+              '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="val2"></output>'+
               '<input id="val2" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(val2)">'+
               '</div>'+
               '<div class="form-group">'+
@@ -88,12 +88,13 @@
         <!--<div id="newTeam-1" class="form-group">-->
           <!--<input class="btn btn-primary" type="button" value="Add Team" onclick="addRow();">-->
           <!--<button onclick="addRow();" class="btn btn-primary"> Add a Team</button>-->
-          
+
         </div>
       </div>
       <div class="line">
         <!--<a href="#/home" class="btn btn-success" type="submit" value="Submit" data-ng-click="sendEmail();">Submit </a>-->
-        <a href="#/home" class="btn btn-success" type="submit" value="Submit" ng-confirm-click="Are you sure you want to submit scores ?" confirmed-click="sendEmail()">Submit </a>
+        <!--<a href="#/home" class="btn btn-success" type="submit" value="Submit" ng-confirm-click="Are you sure you want to submit scores ?" confirmed-click="sendEmail()">Submit </a>-->
+        <button href="#/home" class="btn btn-success" ng-click="sendEmail();" confirmation-needed="Are you sure you want to submit scores?">Submit</button>
         <div class="form-group">
           <a href="#/home" class="btn btn-danger btn-md" role="button">Cancel</a>
         </div>
