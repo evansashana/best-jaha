@@ -16,15 +16,14 @@
         </div>
         <div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">
           <label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>
-          <output style="font-size: 34px; color: #FFFFFF;" for=value id="output"></output>
-          <script text="text/javascript">
-            function outputUpdate(num) {
-              document.querySelector('#output').value = num;
-               window.outputUpdate  = outputUpdate;
-            }
-          </script>
+          <!--<script text="text/javascript">-->
+            <!--function outputUpdate(num) {-->
+              <!--document.querySelector('#output').value = num;-->
+               <!--window.outputUpdate  = outputUpdate;-->
+            <!--}-->
+          <!--</script>-->
           <input id="value" type="range" min="0" max="{{event.max_scale}}" step="1" value="5"
-                 oninput="outputUpdate(value);">
+                 >
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>
@@ -41,13 +40,11 @@
               '</div>' +
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Difficulty</label>' +
-            '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="val1"></output>'+
-            '<input id="val1" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(val1)">'+
+            '<input id="val1" type="range" min="0" max="10" step="1" value="5">'+
               '</div>'+
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Presentation</label>' +
-              '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="val2"></output>'+
-              '<input id="val2" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(val2)">'+
+              '<input id="val2" type="range" min="0" max="10" step="1" value="5">'+
               '</div>'+
               '<div class="form-group">'+
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>'+
