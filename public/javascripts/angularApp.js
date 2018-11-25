@@ -72,19 +72,20 @@ app.config(['$routeProvider', 'USER_ROLES',
   }
 ]);
 
-app.directive('confirmationNeeded', function () {
-  return {
-    link: function (scope, element, attr) {
-      var msg = attr.confirmationNeeded || "Are you sure?";
-      var clickAction = attr.ngClick;
-      element.bind('click',function (e) {
-        scope.$eval(clickAction) if window.confirm(msg)
-          e.stopImmediatePropagation();
-        e.preventDefault();
-      });
-    }
-  };
-});
+appapp.directive('ngConfirmClick', [
+  function(){
+    return {
+      link: function (scope, element, attr) {
+        var msg = attr.ngConfirmClick || "Are you sure?";
+        var clickAction = attr.confirmedClick;
+        element.bind('click',function (event) {
+          if ( window.confirm(msg) ) {
+            scope.$eval(clickAction)
+          }
+        });
+      }
+    };
+  }])
 
 app.run(function($location, $rootScope, $route, AuthenticationService, UserService, EmailService) {
   $rootScope.location = $location;
