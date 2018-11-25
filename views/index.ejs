@@ -14,12 +14,6 @@
         <script src="/javascripts/bootstrap.min.js"></script>
         <script src="/javascripts/angular-css.min.js"></script>
 
-        <script text="text/javascript">
-                    function outputUpdate(num) {
-                      document.querySelector('#output').value = num;
-                      window.outputUpdate  = outputUpdate;
-                    }
-         </script>
         <script type="text/javascript">
           function addRow () {
             document.querySelector('#content').insertAdjacentHTML(
@@ -30,18 +24,16 @@
               '</div>' +
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Difficulty</label>' +
-            '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="value1"></output>'+
-            '<input id="val1" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(val1)">'+
+            '<input id="val1" type="range" min="0" max="10" step="1" value="5">'+
               '</div>'+
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Presentation</label>' +
-              '<output style="font-size: 34px; color: #FFFFFF" id="output" value="5" for="value2"></output>'+
-              '<input id="val2" type="range" min="0" max="10" step="1" value="5" oninput="outputUpdate(val2)">'+
+              '<input id="val2" type="range" min="0" max="10" step="1" value="5">'+
               '</div>'+
               '<div class="form-group">'+
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>'+
             '<textarea rows="6" cols="50"></textarea>'+
-              '<input type="button" value="-" onclick="removeRow(this)">' +
+              '<input type="button" value="Remove Team" onclick="removeRow(this)">' +
               '</div>'
 
           )

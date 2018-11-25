@@ -16,12 +16,6 @@
         </div>
         <div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">
           <label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>
-          <!--<script text="text/javascript">-->
-            <!--function outputUpdate(num) {-->
-              <!--document.querySelector('#output').value = num;-->
-               <!--window.outputUpdate  = outputUpdate;-->
-            <!--}-->
-          <!--</script>-->
           <input id="value" type="range" min="0" max="{{event.max_scale}}" step="1" value="5"
                  >
         </div>
@@ -91,7 +85,7 @@
       <div class="line">
         <!--<a href="#/home" class="btn btn-success" type="submit" value="Submit" data-ng-click="sendEmail();">Submit </a>-->
         <!--<a href="#/home" class="btn btn-success" type="submit" value="Submit" ng-confirm-click="Are you sure you want to submit scores ?" confirmed-click="sendEmail()">Submit </a>-->
-        <button href="#/home" class="btn btn-success" ng-click="sendEmail();" ngConfirmClick="Are you sure you want to submit scores?">Submit</button>
+        <button href="#/home" type="submit" class="btn btn-success" confirmed-click="sendEmail();" ng-confirm-click="Are you sure you want to submit scores?">Submit</button>
         <div class="form-group">
           <a href="#/home" class="btn btn-danger btn-md" role="button">Cancel</a>
         </div>
