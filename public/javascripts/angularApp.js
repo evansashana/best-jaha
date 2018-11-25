@@ -72,7 +72,7 @@ app.config(['$routeProvider', 'USER_ROLES',
   }
 ]);
 
-appapp.directive('ngConfirmClick', [
+app.directive('ngConfirmClick', [
   function(){
     return {
       link: function (scope, element, attr) {
