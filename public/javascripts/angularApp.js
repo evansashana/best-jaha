@@ -386,8 +386,8 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
           alert("You can now judge this event: " + $scope.event.name);
           $location.path('/judge/event_form');
 
-          $scope.sendEmail = function () {
-            if(confirm('Are you sure you want to submit scores?')) {
+          $scope.sendEmailTally = function () {
+            if(confirm("Are you sure you want to submit scores?")) {
               var message = "Hello,\n\nHere are the results of " + event.name + " held at " + event.location + " on " +
                 "November" + " " + "26" + ", " +
                 "2018" + " starting at " + "4:30 PM" + "\n\nTeam Scores: \n\n Fun-Recyclist: " +
@@ -415,7 +415,25 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
         console.log($rootScope.event);
       }
 
+      $scope.sendEmailTally = function () {
+        if(confirm("Are you sure you want to submit scores?")) {
+          var message = "Hello,\n\nHere are the results of " + event.name + " held at " + event.location + " on " +
+            "November" + " " + "26" + ", " +
+            "2018" + " starting at " + "4:30 PM" + "\n\nTeam Scores: \n\n Fun-Recyclist: " +
+            "Difficulty: 7 Presentation: 8\n\n" +
+            "Fairy-Whales: Difficulty: 4 Presentation: 6" +
+            "\n\n Watchable: Difficulty: 8 Presentation: 10" +
+            "\n\n NaN: Difficulty: 8 Presentation: 6" +
+            "\n\n 1st Place: Watchable" + "\n\n 2nd Place: NaN" + "\n\n 3rd Place: Fun-Recyclist" +
+            "\n\n Thanks for using our App JAHA! Administration";
 
+          $scope.sendEmail("contactus.scored@gmail.com", $rootScope.currentUserData.email, "Results!", message);
+          $scope.sendEmail("contactus.scored@gmail.com", 'evans.ashana.3b@gmail.com', "Results!", message);
+
+          $rootScope.sendEmail("contactus.scored@gmail.com", 'evans.ashana.3b@gmail.com', "Results!", message);
+          $location.path('/home');
+        }
+      };
 
         /*$scope.populateForm = function() {
             /*var el = document.createElement('div');
