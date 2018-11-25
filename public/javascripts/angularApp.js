@@ -87,17 +87,18 @@ app.config(['$routeProvider', 'USER_ROLES',
 //     };
 //   }]);
 
-app.directive('ngConfirmClick', [
+app.directive("ngConfirmClick", [
   function() {
     return {
-      priority: 1,
-      link: function(scope, element, attr) {
-        var msg = attr.ngConfirmClick || "Are you sure?";
-        var clickAction = attr.confirmedClick;
-        attr.confirmedClick = "";
-        element.bind('click', function(event) {
-          if (window.confirm(msg)) {
-            scope.$eval(clickAction)
+      priority: -1,
+      restrict: "A",
+      link: function(scope, element, attrs) {
+        element.bind("click", function(e) {
+          var message;
+          message = attrs.ngConfirmClick;
+          if (message && !confirm(message)) {
+            e.stopImmediatePropagation();
+            e.preventDefault();
           }
         });
       }
