@@ -16,8 +16,9 @@
         </div>
         <div class="form-group" id="criteria" data-ng-repeat="criterion in event.criteria">
           <label class="col-md-2 control-label" style="color:#FFFFFF">{{criterion}}</label>
-          <input id="value" type="range" min="0" max="{{event.max_scale}}" step="1" value="5"
-                 >
+          <em id="rangeValLabel" style="font-style: normal;color: #FFF;"></em>
+          <input id="rangeVal" type="range" min="0" max="{{event.max_scale}}" step="1" value="5"
+                 oninput="document.getElementById('rangeValLabel').innerHTML = this.value;" >
         </div>
         <div class="form-group">
             <label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>
@@ -26,24 +27,26 @@
       <div id="newTeams">
         <script type="text/javascript">
           function addRow () {
-            document.querySelector('#content').insertAdjacentHTML(
+            document.getElementById('content').insertAdjacentHTML(
               'afterbegin',
-              '<div class="form-group">' +
+              "<div id=\"appendedChild\" class=\"form-group\">" +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Team/Project Name:</label>' +
               '<input type="text" placeholder="Team/Project Name" data-ng-model="judge_form.team">' +
               '</div>' +
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Difficulty</label>' +
-            '<input id="val1" type="range" min="0" max="10" step="1" value="5">'+
+              '<em id="val2" style="font-style: normal;color: #FFF;"></em>'+
+            '<input id="range" type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'val2\').innerHTML = this.value;">'+
               '</div>'+
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Presentation</label>' +
-              '<input id="val2" type="range" min="0" max="10" step="1" value="5">'+
+              '<em id="val3" style="font-style: normal; color: #FFF;"></em>'+
+              '<input id="ranger" type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'val3\').innerHTML = this.value;">'+
               '</div>'+
               '<div class="form-group">'+
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>'+
             '<textarea rows="6" cols="50"></textarea>'+
-              '<input type="button" value="Remove Team" onclick="removeRow(this)">' +
+              '<input type="button" value="Remove Team" onclick="removeRow()">' +
               '</div>'
 
           )
@@ -57,14 +60,18 @@
           //   //We assign the remove event for all of them and instead of the string id we pass the element itself (=this)
           //   for(var i=0, j=tL.length; i<j; i++)
           //     tL[i].onclick = function(){
-          //       removeRow(this)
-          //     }
+          //       removeRow(this)//     }
           //     window.Init = Init;
           // }
 
-          function removeRow (input) {
-              input.parentElement.remove()
-
+          function removeRow () {
+            // var j = document.getElementById('newTeams-1');
+            // var xv = document.getElementById("content");
+            // //xv.parentNode.removeChild(xv);
+            // var appended = document.createElement("div");
+            // j.appendChild(appended);
+            // xv.remove();
+             input.parentElement.remove();
             // //var j = document.getElementById('newTeams-1');
             // var delDiv = document.getElementById('content');
             //  delDiv.getParent().remove();
@@ -74,8 +81,8 @@
             <input class="btn btn-primary" type="button" value="Add Team" onclick="addRow();">
 
           <!--<button data-ng-click="addNewTeam(event);" class="btn btn-primary"> Add a Team</button>-->
-        <div id="content" class="form-group">
-        </div>
+          <div id="content" class="form-group">
+          </div>
         <!--<div id="newTeam-1" class="form-group">-->
           <!--<input class="btn btn-primary" type="button" value="Add Team" onclick="addRow();">-->
           <!--<button onclick="addRow();" class="btn btn-primary"> Add a Team</button>-->

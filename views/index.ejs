@@ -18,18 +18,18 @@
           function addRow () {
             document.querySelector('#content').insertAdjacentHTML(
               'afterbegin',
-              '<div class="form-group">' +
+              '<div id="appendedChild" class="form-group">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Team/Project Name:</label>' +
               '<input type="text" placeholder="Team/Project Name" data-ng-model="judge_form.team">' +
               '</div>' +
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Difficulty</label>' +
-            '<input id="val1" type="range" min="0" max="10" step="1" value="5">'+
-              '</div>'+
+              '<em id="val2" style="font-style: normal;color: #FFF;"></em>'+
+              '<input id="range" type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'val2\').innerHTML = this.value;">'+              '</div>'+
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Presentation</label>' +
-              '<input id="val2" type="range" min="0" max="10" step="1" value="5">'+
-              '</div>'+
+              '<em id="val3" style="font-style: normal; color: #FFF;"></em>'+
+              '<input id="ranger" type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'val3\').innerHTML = this.value;">'+              '</div>'+
               '<div class="form-group">'+
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>'+
             '<textarea rows="6" cols="50"></textarea>'+
