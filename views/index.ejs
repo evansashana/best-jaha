@@ -16,36 +16,36 @@
 
         <script type="text/javascript">
           function addRow () {
-            document.querySelector('#content').insertAdjacentHTML(
+            document.getElementById('content').insertAdjacentHTML(
               'afterbegin',
-              '<div id="appendedChild" class="form-group">' +
+              '<div class="form-group">' +
+              '<div class="form-group">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Team/Project Name:</label>' +
               '<input type="text" placeholder="Team/Project Name" data-ng-model="judge_form.team">' +
               '</div>' +
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Difficulty</label>' +
               '<em id="val2" style="font-style: normal;color: #FFF;"></em>'+
-              '<input id="range" type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'val2\').innerHTML = this.value;">'+              '</div>'+
+            '<input id="range" type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'val2\').innerHTML = this.value;">'+
+              '</div>'+
               '<div class="form-group" id="criteria">' +
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Presentation</label>' +
               '<em id="val3" style="font-style: normal; color: #FFF;"></em>'+
-              '<input id="ranger" type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'val3\').innerHTML = this.value;">'+              '</div>'+
+              '<input id="ranger" type="range" min="0" max="10" step="1" value="5" oninput="document.getElementById(\'val3\').innerHTML = this.value;">'+
+              '</div>'+
               '<div class="form-group">'+
               '<label class="col-md-2 control-label" style="color:#FFFFFF">Additional Comments:</label>'+
             '<textarea rows="6" cols="50"></textarea>'+
+              '</div>' +
               '<input type="button" value="Remove Team" onclick="removeRow(this)">' +
               '</div>'
-
           )
           }
           window.addRow = addRow;
 
           function removeRow (input) {
-              input.parentElement.remove()
+             input.parentElement.remove();
 
-            // //var j = document.getElementById('newTeams-1');
-            // var delDiv = document.getElementById('content');
-            //  delDiv.getParent().remove();
           }
         </script>
 
