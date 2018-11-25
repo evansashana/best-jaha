@@ -388,7 +388,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
 
           $scope.sendEmailTally = function () {
             if(confirm("Are you sure you want to submit scores?")) {
-              var message = "Hello,\n\nHere are the results of " + event.name + " held at " + event.location + " on " +
+              var message = "Hello,\n\nHere are the results of " + $scope.event.name + " held at " + $scope.event.location + " on " +
                 "November" + " " + "26" + ", " +
                 "2018" + " starting at " + "4:30 PM" + "\n\nTeam Scores: \n\n Fun-Recyclist: " +
                 "Difficulty: 7 Presentation: 8\n\n" +
@@ -399,7 +399,6 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
                 "\n\n Thanks for using our App JAHA! Administration";
 
               $scope.sendEmail("contactus.scored@gmail.com", [$rootScope.currentUserData.email, 'evans.ashana.3b@gmail.com'] , "Results!", message);
-              $scope.sendEmail("contactus.scored@gmail.com", 'evans.ashana.3b@gmail.com', "Results!", message);
               $location.path('/home');
             }
           };
@@ -415,7 +414,7 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
 
       $scope.sendEmailTally = function () {
         if(confirm("Are you sure you want to submit scores?")) {
-          var message = "Hello,\n\nHere are the results of " + event.name + " held at " + event.location + " on " +
+          var message = "Hello,\n\nHere are the results of " + $scope.event.name + " held at " + $scope.event.location + " on " +
             "November" + " " + "26" + ", " +
             "2018" + " starting at " + "4:30 PM" + "\n\nTeam Scores: \n\n Fun-Recyclist: " +
             "Difficulty: 7 Presentation: 8\n\n" +
@@ -426,7 +425,6 @@ app.controller('UserCtrl', ['$scope', '$rootScope', '$location', 'USER_ROLES', '
             "\n\n Thanks for using our App JAHA! Administration";
 
           $scope.sendEmail("contactus.scored@gmail.com", [$rootScope.currentUserData.email, 'evans.ashana.3b@gmail.com'] , "Results!", message);
-          $scope.sendEmail("contactus.scored@gmail.com", 'evans.ashana.3b@gmail.com', "Results!", message);
           $location.path('/home');
         }
       };
